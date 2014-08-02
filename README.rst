@@ -69,6 +69,7 @@ You'll need to use `partial` or `curried <http://toolz.readthedocs.org/en/latest
   (_| ['ca', 'tx', 'ny']
     | partial(map, lambda state: state.upper())
     | drop(1)
+    | list
     |_)
 
   # ['TX', 'NY']
