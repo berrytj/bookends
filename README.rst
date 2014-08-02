@@ -44,7 +44,7 @@ Note: for multiline usage, wrap the expression in parens.
     | sorted
     |_)
 
-  # [[20, 6, 9], [40, 5, 10], [41, 10, 10]]
+  # [['20', '6', '9'], ['40', '5', '10'], ['41', '10', '10']]
             
 
 Wrap lone lambdas in parens as well.
