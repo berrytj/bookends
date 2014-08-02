@@ -37,9 +37,10 @@ Note: for multiline usage, wrap the expression in parens.
 
   >>> (_| [1, 2, 3]
   ...   | map(lambda n: n*2)
+  ...   | drop(1)
   ...   | sum
   ...   |_)
-  12
+  10
 
 
 Here's the entire source:
