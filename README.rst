@@ -19,14 +19,13 @@ Compare:
 
 .. code-block:: python
 
-  l = []
-  for n in [1, 2, 3]:
-    l.append(n*2)
+  l = map(lambda n: n*2, [1, 2, 3])
 
   l = [n*2 for n in [1, 2, 3]]
 
-  l = map(lambda n: n*2, [1, 2, 3])
-  
+  l = []
+  for n in [1, 2, 3]:
+    l.append(n*2)
   
 See example.py for an extended example.
 
