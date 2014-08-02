@@ -53,6 +53,7 @@ print functional()
 
 from toolz.curried import map, filter, mapcat, curry
 count_by = curry(count_by)
+
 from bookends import _
 
 def piped():
