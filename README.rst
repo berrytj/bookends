@@ -34,9 +34,6 @@ Note: for multiline usage, wrap the expression in parens.
 
 .. code-block:: python
 
-  from bookends import _
-  from toolz.curried import map
-
   l = (_| [1, 2, 3]
         | map(lambda n: n*2)
         | map(lambda n: n**3)
