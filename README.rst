@@ -17,7 +17,7 @@ Compare:
 
   l = []
   for n in [1, 2, 3]:
-    l.append(n*2)
+      l.append(n*2)
   
 For an extended example, see `example.py <https://github.com/berrytj/bookends/blob/master/example.py>`_.
 
@@ -35,35 +35,70 @@ Note: for multiline usage, wrap the expression in parens.
 
 .. code-block:: python
 
-  >>> (_| [1, 2, 3]
-  ...   | map(lambda n: n*2)
-  ...   | drop(1)
-  ...   | sum
+  import csv
+  from StringIO import StringIO
+
+  >>> (_| '40,5,10\n20,6,9\n41,10,10\n'
+  ...   | StringIO
+  ...   | csv.reader
+  ...   | sorted
   ...   |_)
-  10
+  [[20, 6, 9], [40, 5, 10], [41, 10, 10]]
+            
+
+Wrap lone lambdas in parens as well.
+
+.. code-block:: python
+  
+  >>> (_| ['addition', 'multiplication']
+  ...   | (lambda l: l + ['exponentiation', 'tetration'])
+  ...   | ', '.join
+  ...   |_)
+  addition, multiplication, exponentiation, tetration
+
+
+You'll need to use `partial` or `curried <http://toolz.readthedocs.org/en/latest/curry.html>`_ functions.
+
+.. code-block:: python
+  
+  >>> from toolz.curried import drop
+
+  >>> (_| ['ca', 'tx', 'ny']
+  ...   | partial(map, lambda state: state.upper())
+  ...   | drop(1)
+  ...   |_)
+  ['TX', 'NY']
+
+
+Plays nice with Kachayev's _.
+
+.. code-block:: python
+  
+  from fn import _ as __
+  _| [1, 2, 3] | __ + [4, 5] |_   # [1, 2, 3, 4, 5]
 
 
 Here's the entire source:
 
 .. code-block:: python
 
-  class CreatorAndDestroyer():
-    def __or__(self, operand):
-      return Piped(operand)
+  class Bookend():
+      def __or__(self, operand):
+          return Piped(operand)
 
 
   class Piped():
-    def __init__(self, operand):
-      self.operand = operand
+      def __init__(self, operand):
+          self.operand = operand
 
-    def __or__(self, f):
-      if isinstance(f, CreatorAndDestroyer):
-        return self.operand
-      else:
-        return Piped(f(self.operand))
+      def __or__(self, f):
+          if isinstance(f, Bookend):
+              return self.operand
+          else:
+              return Piped(f(self.operand))
 
 
-  _ = CreatorAndDestroyer()
+  _ = Bookend()
 
 
 Contact: `@bzrry <https://twitter.com/bzrry>`_.

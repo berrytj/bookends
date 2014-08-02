@@ -1,4 +1,4 @@
-class CreatorAndDestroyer():
+class Bookend():
   def __or__(self, operand):
     return Piped(operand)
 
@@ -8,11 +8,11 @@ class Piped():
     self.operand = operand
 
   def __or__(self, f):
-    if isinstance(f, CreatorAndDestroyer):
+    if isinstance(f, Bookend):
       return self.operand
     else:
       return Piped(f(self.operand))
 
 
-_ = CreatorAndDestroyer()
+_ = Bookend()
 
