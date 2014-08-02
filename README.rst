@@ -24,10 +24,10 @@ For an extended example, see `example.py <https://github.com/berrytj/bookends/bl
 
 For similar tools, see:
 
-- Unix's |
 - from fn import F
 - from toolz import thread_first, thread_last
 - Clojure's -> and ->>
+- Unix's |
 - etc.
 
 
