@@ -28,7 +28,6 @@ For similar tools, see:
 - from toolz import thread_first, thread_last
 - Clojure's -> and ->>
 - Unix's |
-- etc.
 
 
 Here's the entire source:
