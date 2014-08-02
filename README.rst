@@ -35,9 +35,8 @@ Note: for multiline usage, wrap the expression in parens.
 
 .. code-block:: python
 
-  import csv
-  from StringIO import StringIO
-
+  >>> import csv
+  >>> from StringIO import StringIO
   >>> (_| '40,5,10\n20,6,9\n41,10,10\n'
   ...   | StringIO
   ...   | csv.reader
@@ -62,7 +61,6 @@ You'll need to use `partial` or `curried <http://toolz.readthedocs.org/en/latest
 .. code-block:: python
   
   >>> from toolz.curried import drop
-
   >>> (_| ['ca', 'tx', 'ny']
   ...   | partial(map, lambda state: state.upper())
   ...   | drop(1)
@@ -74,8 +72,9 @@ Plays nice with Kachayev's _.
 
 .. code-block:: python
   
-  from fn import _ as __
-  _| [1, 2, 3] | __ + [4, 5] |_   # [1, 2, 3, 4, 5]
+  >>> from fn import _ as __
+  >>> _| [1, 2, 3] | __ + [4, 5] |_
+  [1, 2, 3, 4, 5]
 
 
 Here's the entire source:
