@@ -29,7 +29,7 @@ Compare:
   from bookends import _
   from toolz.curried import map
 
-  l = _| [1, 2, 3] | map(lambda n: n*2) \|_
+  l = _| [1, 2, 3] | map(lambda n: n*2) |_
   
 See example.py for an extended example.
 
