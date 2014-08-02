@@ -1,10 +1,10 @@
 A simple syntax for piping in Python.
 
 For similar tools, see:
-Unix's |
-from fn import F
-from toolz import thread_first, thread_last
-Clojure's -> and ->>
+- Unix's |
+- from fn import F
+- from toolz import thread_first, thread_last
+- Clojure's -> and ->>
 etc.
 
 Compare:
@@ -15,10 +15,16 @@ Compare:
   for n in [1, 2, 3]:
     l.append(n*2)
 
+.. code-block:: python
+
   l = [n*2 for n in [1, 2, 3]]
+
+.. code-block:: python
 
   l = map(lambda n: n*2, [1, 2, 3])
   
+.. code-block:: python
+
   from bookends import _
   from toolz.curried import map
 
