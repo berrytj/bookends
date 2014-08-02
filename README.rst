@@ -1,13 +1,5 @@
 A simple syntax for piping in Python.
 
-For similar tools, see:
-
-- Unix's |
-- from fn import F
-- from toolz import thread_first, thread_last
-- Clojure's -> and ->>
-- etc.
-
 Compare:
 
 .. code-block:: python
@@ -28,6 +20,15 @@ Compare:
     l.append(n*2)
   
 See example.py for an extended example.
+
+
+For similar tools, see:
+
+- Unix's |
+- from fn import F
+- from toolz import thread_first, thread_last
+- Clojure's -> and ->>
+- etc.
 
 
 Here's the entire source:
