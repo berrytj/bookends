@@ -1,4 +1,5 @@
 bookends.egg-info/*
 dist/*
 build/*
+*.pyc
 
