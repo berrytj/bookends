@@ -19,7 +19,7 @@ Compare:
   for n in [1, 2, 3]:
       l.append(n*2)
   
-For an extended example, see `example.py <https://github.com/berrytj/bookends/blob/master/example.py>`_.
+For an extended comparison, see `example.py <https://github.com/berrytj/bookends/blob/master/example.py>`_.
 
 
 For similar tools, see:
@@ -35,47 +35,50 @@ Note: for multiline usage, wrap the expression in parens.
 
 .. code-block:: python
 
-  >>> import csv
-  >>> from StringIO import StringIO
-  >>> (_| '40,5,10\n20,6,9\n41,10,10\n'
-  ...   | StringIO
-  ...   | csv.reader
-  ...   | sorted
-  ...   |_)
-  [[20, 6, 9], [40, 5, 10], [41, 10, 10]]
+  import csv
+  from StringIO import StringIO
+
+  (_| '40,5,10\n20,6,9\n41,10,10\n'
+    | StringIO
+    | csv.reader
+    | sorted
+    |_)
+  # [[20, 6, 9], [40, 5, 10], [41, 10, 10]]
             
 
 Wrap lone lambdas in parens as well.
 
 .. code-block:: python
   
-  >>> (_| ['addition', 'multiplication']
-  ...   | (lambda l: l + ['exponentiation', 'tetration'])
-  ...   | ', '.join
-  ...   |_)
-  addition, multiplication, exponentiation, tetration
+  (_| ['addition', 'multiplication']
+    | (lambda l: l + ['exponentiation', 'tetration'])
+    | ', '.join
+    |_)
+  # addition, multiplication, exponentiation, tetration
 
 
 You'll need to use `partial` or `curried <http://toolz.readthedocs.org/en/latest/curry.html>`_ functions.
 
 .. code-block:: python
   
-  >>> from functools import partial
-  >>> from toolz.curried import drop
-  >>> (_| ['ca', 'tx', 'ny']
-  ...   | partial(map, lambda state: state.upper())
-  ...   | drop(1)
-  ...   |_)
-  ['TX', 'NY']
+  from functools import partial
+  from toolz.curried import drop
+
+  (_| ['ca', 'tx', 'ny']
+    | partial(map, lambda state: state.upper())
+    | drop(1)
+    |_)
+  # ['TX', 'NY']
 
 
 Plays nice with Kachayev's _.
 
 .. code-block:: python
   
-  >>> from fn import _ as __
-  >>> _| [1, 2, 3] | __ + [4, 5] |_
-  [1, 2, 3, 4, 5]
+  from fn import _ as __
+
+  _| [1, 2, 3] | __ + [4, 5] |_
+  # [1, 2, 3, 4, 5]
 
 
 Here's the entire source:
