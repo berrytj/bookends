@@ -43,6 +43,7 @@ Note: for multiline usage, wrap the expression in parens.
     | csv.reader
     | sorted
     |_)
+
   # [[20, 6, 9], [40, 5, 10], [41, 10, 10]]
             
 
@@ -54,6 +55,7 @@ Wrap lone lambdas in parens as well.
     | (lambda l: l + ['exponentiation', 'tetration'])
     | ', '.join
     |_)
+
   # addition, multiplication, exponentiation, tetration
 
 
@@ -68,6 +70,7 @@ You'll need to use `partial` or `curried <http://toolz.readthedocs.org/en/latest
     | partial(map, lambda state: state.upper())
     | drop(1)
     |_)
+
   # ['TX', 'NY']
 
 
@@ -78,6 +81,7 @@ Plays nice with Kachayev's _.
   from fn import _ as __
 
   _| [1, 2, 3] | __ + [4, 5] |_
+
   # [1, 2, 3, 4, 5]
 
 
