@@ -3,7 +3,7 @@
 from os.path import exists
 from setuptools import setup
 
-from src import bookends
+import bookends
 
 
 setup(name='bookends',

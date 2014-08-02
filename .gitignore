@@ -1,0 +1,4 @@
+bookends.egg-info/*
+dist/*
+build/*
+

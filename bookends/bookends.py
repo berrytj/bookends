@@ -1,6 +1,3 @@
-version = '0.0.1'
-
-
 class CreatorAndDestroyer():
   def __or__(self, operand):
     return Piped(operand)
