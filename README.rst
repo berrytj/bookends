@@ -7,17 +7,18 @@ Compare:
   from bookends import _
   from toolz.curried import map
 
-  l = _| [1, 2, 3] | map(lambda n: n*2) |_
+  print _| [1, 2, 3] | map(lambda n: n*2) |_  # [2, 4, 6]
 
 .. code-block:: python
 
-  l = map(lambda n: n*2, [1, 2, 3])
+  print map(lambda n: n*2, [1, 2, 3])
 
-  l = [n*2 for n in [1, 2, 3]]
+  print [n*2 for n in [1, 2, 3]]
 
   l = []
   for n in [1, 2, 3]:
     l.append(n*2)
+  print l
   
 For an extended example, see `example.py <https://github.com/berrytj/bookends/blob/master/example.py>`_.
 
@@ -27,7 +28,7 @@ For similar tools, see:
 - from fn import F
 - from toolz import thread_first, thread_last
 - Clojure's -> and ->>
-- Unix's |
+- Unix |
 
 
 Here's the entire source:
