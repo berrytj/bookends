@@ -24,6 +24,6 @@ def test_creator_and_destroyer():
         | enumerate
         | list
         |_),
-        [(0, 1), (1, 4), (2, 9)]
+      [(0, 1), (1, 4), (2, 9)]
   )
 
