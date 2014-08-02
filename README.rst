@@ -38,7 +38,8 @@ Note: for multiline usage, wrap the expression in parens.
   print (_| [1, 2, 3]
           | map(lambda n: n*2)
           | sum
-          |_)  # 12
+          |_)
+  12
 
 
 Here's the entire source:
