@@ -21,6 +21,12 @@ Compare:
   
 For an extended comparison, see `example.py <https://github.com/berrytj/bookends/blob/master/example.py>`_.
 
+To install:
+
+.. code-block:: python
+
+  pip install bookends
+
 
 For similar tools, see:
 
