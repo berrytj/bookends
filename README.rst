@@ -36,7 +36,7 @@ Note: for multiline usage, wrap the expression in parens.
 
   l = (_| [1, 2, 3]
         | map(lambda n: n*2)
-        | map(lambda n: n**3)
+        | sum
         |_)
 
 
