@@ -19,7 +19,7 @@ Compare:
   for n in [1, 2, 3]:
     l.append(n*2)
   
-For an extended example, see example.py.
+For an extended example, see `example.py <https://github.com/berrytj/bookends/blob/master/example.py>`_.
 
 
 For similar tools, see:
@@ -54,5 +54,5 @@ Here's the entire source:
   _ = CreatorAndDestroyer()
 
 
-Contact: @bzrry
+Contact: `@bzrry <https://twitter.com/bzrry>`_.
 
