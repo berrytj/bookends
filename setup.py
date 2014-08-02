@@ -2,7 +2,9 @@
 
 from os.path import exists
 from setuptools import setup
+
 from src import bookends
+
 
 setup(name='bookends',
       version=bookends.__version__,
