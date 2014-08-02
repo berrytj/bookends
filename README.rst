@@ -1,11 +1,12 @@
 A simple syntax for piping in Python.
 
 For similar tools, see:
+
 - Unix's |
 - from fn import F
 - from toolz import thread_first, thread_last
 - Clojure's -> and ->>
-etc.
+- etc.
 
 Compare:
 
