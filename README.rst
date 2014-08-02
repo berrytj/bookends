@@ -35,11 +35,10 @@ Note: for multiline usage, wrap the expression in parens.
 
 .. code-block:: python
 
-  l = (_| [1, 2, 3]
-        | map(lambda n: n*2)
-        | sum
-        |_)
-  print l  # 12
+  print (_| [1, 2, 3]
+          | map(lambda n: n*2)
+          | sum
+          |_)  # 12
 
 
 Here's the entire source:
