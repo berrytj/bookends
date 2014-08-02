@@ -27,6 +27,7 @@ For similar tools, see:
 - from fn import F
 - from toolz import thread_first, thread_last
 - Clojure's -> and ->>
+- Underscore's chain
 - Unix |
 
 
@@ -38,6 +39,7 @@ Note: for multiline usage, wrap the expression in parens.
         | map(lambda n: n*2)
         | sum
         |_)
+  print l  # 12
 
 
 Here's the entire source:
