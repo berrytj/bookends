@@ -11,7 +11,8 @@ class Piped():
     if isinstance(f, Bookend):
       return self.operand
     else:
-      return Piped(f(self.operand))
+      self.operand = f(self.operand)
+      return self
 
 
 _ = Bookend()
