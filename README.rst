@@ -65,7 +65,7 @@ Wrap lone lambdas in parens as well.
   # 'addition, multiplication, exponentiation, tetration'
 
 
-You'll need to use `partial` or `curried <http://toolz.readthedocs.org/en/latest/curry.html>`_ functions.
+You'll likely need partial or `curried <http://toolz.readthedocs.org/en/latest/curry.html>`_ functions.
 
 .. code-block:: python
   
