@@ -28,6 +28,13 @@ To install:
   pip install bookends
 
 
+To use:
+
+.. code-block:: python
+
+  from bookends import _
+
+
 For similar tools, see:
 
 - `from fn import F <https://github.com/kachayev/fn.py>`_
