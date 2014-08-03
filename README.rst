@@ -81,7 +81,7 @@ You'll likely need partial or `curried <http://toolz.readthedocs.org/en/latest/c
   # ['TX', 'NY']
 
 
-Plays nice with Kachayev's _.
+Plays nice with `Kachayev's _ <https://github.com/kachayev/fn.py>`_.
 
 .. code-block:: python
   
