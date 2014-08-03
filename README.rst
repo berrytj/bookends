@@ -7,19 +7,23 @@ Compare:
   from bookends import _
   from toolz.curried import map
 
-  l = _| [1, 2, 3] | map(lambda n: n*2) |_   # [2, 4, 6]
+  l = _| [3, 2, 1] | map(lambda n: n*2) | sorted |_   # [2, 4, 6]
+
+with:
 
 .. code-block:: python
 
-  l = map(lambda n: n*2, [1, 2, 3])
+  l = sorted(map(lambda n: n*2, [3, 2, 1]))
 
-  l = [n*2 for n in [1, 2, 3]]
+  l = sorted([n*2 for n in [3, 2, 1]])
 
   l = []
-  for n in [1, 2, 3]:
+  for n in [3, 2, 1]:
       l.append(n*2)
+  l.sort()
   
 For an extended comparison, see `example.py <https://github.com/berrytj/bookends/blob/master/example.py>`_.
+
 
 To install:
 
@@ -104,19 +108,20 @@ Here's the entire source:
 .. code-block:: python
 
   class Bookend():
-      def __or__(self, operand):
-          return Piped(operand)
+    def __or__(self, operand):
+      return Piped(operand)
 
 
   class Piped():
-      def __init__(self, operand):
-          self.operand = operand
+    def __init__(self, operand):
+      self.operand = operand
 
-      def __or__(self, f):
-          if isinstance(f, Bookend):
-              return self.operand
-          else:
-              return Piped(f(self.operand))
+    def __or__(self, f):
+      if isinstance(f, Bookend):
+        return self.operand
+      else:
+        self.operand = f(self.operand)
+        return self
 
 
   _ = Bookend()
