@@ -76,7 +76,7 @@ Wrap lone lambdas in parens as well.
   # 'addition, multiplication, exponentiation, tetration'
 
 
-You'll likely need partial or `curried <http://toolz.readthedocs.org/en/latest/curry.html>`_ functions.
+You can use partial or `curried <http://toolz.readthedocs.org/en/latest/curry.html>`_ functions.
 
 .. code-block:: python
   
@@ -92,6 +92,34 @@ You'll likely need partial or `curried <http://toolz.readthedocs.org/en/latest/c
   # ['TX', 'NY']
 
 
+And/or use `threading <http://toolz.readthedocs.org/en/latest/api.html#toolz.functoolz.thread_last>`_ syntax.
+
+.. code-block:: python
+  
+  from toolz import drop
+
+  (_| ['ca', 'tx', 'ny']
+    | (map, lambda state: state.upper())
+    | (drop, 1)
+    | list
+    |_)
+
+  # ['TX', 'NY']
+
+
+If you don't like the underscore, import the bookend as B.
+
+.. code-block:: python
+  
+  from bookends import B
+
+  (B| ['ca', 'tx', 'ny']
+    | (map, lambda state: state.upper())
+    | (drop, 1)
+    | list
+    |B)
+
+
 Plays nice with `Kachayev's _ <https://github.com/kachayev/fn.py>`_.
 
 .. code-block:: python
@@ -103,7 +131,7 @@ Plays nice with `Kachayev's _ <https://github.com/kachayev/fn.py>`_.
   # [1, 2, 3, 4, 5]
 
 
-Here's the entire source:
+Here's a simplified version of the source:
 
 .. code-block:: python
 
