@@ -5,6 +5,7 @@ import re
 from functools import wraps, partial
 from collections import defaultdict
 from pdb import set_trace
+from copy import copy
 
 from toolz import curry, identity
 
@@ -106,7 +107,7 @@ _.sv = _.vs
 class Pipe():
   def __init__(self, operand, options):
     self.operand = operand
-    self.options = options
+    self.options = copy(options)
     self._stack = [(None, shorten(self.operand))]
     self.state = {}
 
