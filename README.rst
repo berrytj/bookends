@@ -128,7 +128,7 @@ To stop in the debugger before each function call, put a :code:`step` into the p
 
   (_| [3, 2, 1]
     | (map, lambda x: x*2)
-    | step                 # <==
+    | step               # <==
     | sorted
     | sum
     |_)
@@ -142,9 +142,9 @@ To call off the stepping, drop in an :code:`endstep`.
 
   (_| [3, 2, 1]
     | (map, lambda x: x*2)
-    | step
+    | step               # <==
     | sorted
-    | endstep              # <==
+    | endstep            # <==
     | sum
     |_)
 
@@ -156,7 +156,7 @@ To print each function and its output, drop in a :code:`verbose`.
   from bookends import verbose
 
   (_| [3, 2, 1]
-    | verbose              # <==
+    | verbose            # <==
     | (map, lambda x: x*2)
     | sorted
     | sum
@@ -167,7 +167,7 @@ You can easily add these options while debugging by tacking on their first lette
 
 .. code-block:: python
   
-  (_.sv| [3, 2, 1]         # <== Turn on step and verbose (_.s, _.v, and _.vs work too).
+  (_.sv| [3, 2, 1]       # <== Turn on step and verbose (_.s, _.v, and _.vs work too).
     | (map, lambda x: x*2)
     | sorted
     | sum
@@ -186,7 +186,7 @@ Drop in a function that won't affect the operand by decorating it with passthrou
   
   (_| [3, 2, 1]
     | (map, lambda x: x*2)
-    | log                  # <==
+    | log                # <==
     | sorted
     |_)
 
