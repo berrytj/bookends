@@ -120,6 +120,77 @@ If you don't like the underscore, import the bookend as B.
     |B)
 
 
+To stop in the debugger before each function call, put a :code:`step` into the pipe.
+
+.. code-block:: python
+  
+  from bookends import step
+
+  (_| [3, 2, 1]
+    | (map, lambda x: x*2)
+    | step                 # <==
+    | sorted
+    | sum
+    |_)
+
+
+To call off the stepping, drop in an :code:`endstep`.
+
+.. code-block:: python
+  
+  from bookends import step, endstep
+
+  (_| [3, 2, 1]
+    | (map, lambda x: x*2)
+    | step
+    | sorted
+    | endstep              # <==
+    | sum
+    |_)
+
+
+To print each function and its output, drop in a :code:`verbose`.
+
+.. code-block:: python
+  
+  from bookends import verbose
+
+  (_| [3, 2, 1]
+    | verbose              # <==
+    | (map, lambda x: x*2)
+    | sorted
+    | sum
+    |_)
+
+
+You can easily add these options while debugging by tacking on their first letter to the initial bookend.
+
+.. code-block:: python
+  
+  (_.sv| [3, 2, 1]         # <== Turn on step and verbose (_.s, _.v, and _.vs work too).
+    | (map, lambda x: x*2)
+    | sorted
+    | sum
+    |_)
+
+
+Drop in a function that won't affect the operand by decorating it with passthrough.
+
+.. code-block:: python
+
+  from bookends import passthrough
+
+  @passthrough
+  def log(operand):
+    log.info('Operand was {}.'.format(operand))
+  
+  (_| [3, 2, 1]
+    | (map, lambda x: x*2)
+    | log                  # <==
+    | sorted
+    |_)
+
+
 Plays nice with `Kachayev's _ <https://github.com/kachayev/fn.py>`_.
 
 .. code-block:: python
