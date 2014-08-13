@@ -92,7 +92,7 @@ You can use partial or `curried <http://toolz.readthedocs.org/en/latest/curry.ht
   # ['TX', 'NY']
 
 
-And/or use `threading <http://toolz.readthedocs.org/en/latest/api.html#toolz.functoolz.thread_last>`_ syntax.
+And/or use `threading <http://toolz.readthedocs.org/en/latest/api.html#toolz.functoolz.thread_last>`_ syntax, by putting each function and its arguments into a tuple.
 
 .. code-block:: python
   
