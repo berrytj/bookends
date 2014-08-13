@@ -208,10 +208,10 @@ Here's a simplified version of the source:
 
   class Bookend():
     def __or__(self, operand):
-      return Piped(operand)
+      return Pipe(operand)
 
 
-  class Piped():
+  class Pipe():
     def __init__(self, operand):
       self.operand = operand
 
