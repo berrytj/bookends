@@ -42,7 +42,7 @@ To use:
 For similar tools, see:
 
 - `from fn import F <https://github.com/kachayev/fn.py>`_
-- `from toolz import thread_first, thread_last <http://toolz.readthedocs.org/en/latest/api.html?highlight=thread_first#toolz.functoolz.thread_first>`_, `<http://toolz.readthedocs.org/en/latest/api.html#toolz.functoolz.pipe> pipe`_
+- `from toolz import thread_first, thread_last <http://toolz.readthedocs.org/en/latest/api.html?highlight=thread_first#toolz.functoolz.thread_first>`_, `pipe <http://toolz.readthedocs.org/en/latest/api.html#toolz.functoolz.pipe>`_
 - `Clojure's -> and ->> <http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/-%3e>`_
 - `Underscore's chain <http://underscorejs.org/#chain>`_
 - Unix |
