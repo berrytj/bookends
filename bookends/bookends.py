@@ -7,8 +7,6 @@ from collections import defaultdict
 from pdb import set_trace
 from copy import copy
 
-from toolz import curry, identity
-
 from step import piped as step_into
 from stop_as_final_func import piped as stop_as_final_func
 
@@ -19,6 +17,10 @@ __all__ = ('verbose', 'endverbose', 'step', 'endstep', 'stop', 'setstate', 'gets
 
 NOT_PRESENT = '__not__present__'
 MAX_OPERAND_STR_LEN = 70
+
+
+def identity(x):
+  return x
 
 
 def get_name(f):
